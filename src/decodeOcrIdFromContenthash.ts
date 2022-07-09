@@ -2,7 +2,7 @@ import { BigNumber, ethers } from "ethers";
 import { arrayify, BytesLike } from "ethers/lib/utils";
 import { OCR_PROTOCOL_ID } from "./constants";
 import { OcrId } from "./OcrId";
-import { decodeBytes } from "@nerfzael/encoding";
+import { decodeFixedBytes } from "@nerfzael/encoding";
 
 export const decodeOcrIdFromContenthash = (
   contenthash: BytesLike,
@@ -19,7 +19,7 @@ export const decodeOcrIdFromContenthash = (
   }
 
   const [protocolVersion, chainId, contractAddress, packageIndex, startBlock, endBlock] =
-    decodeBytes(contentHashBytes, [2, 8, 20, 8, 8, 8], 1);
+    decodeFixedBytes(contentHashBytes, [2, 8, 20, 8, 8, 8], 1);
 
   return {
     protocolVersion: BigNumber.from(protocolVersion).toNumber(),

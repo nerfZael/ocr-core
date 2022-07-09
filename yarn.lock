@@ -886,10 +886,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@nerfzael/encoding@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@nerfzael/encoding/-/encoding-0.1.1.tgz#a4a1c55d14e9432e52ed8838b32e51df6f7b95d6"
-  integrity sha512-4RFasPFH9ZJiDnK22UXKF4jla/5JosrBuChXQtfkjZ6BLSm7qnqygAFFIj4BAZc1l7Bv/rwpkfELm9HOidmqog==
+"@nerfzael/encoding@0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@nerfzael/encoding/-/encoding-0.2.4.tgz#31415dbb553a17914ff1562f7dea837c53d0f1d7"
+  integrity sha512-pzpDNpafJ1mBeNimlBvwdoQq0Xe06YI87ecBkDfkZRfKjgHjMB1TPZVPS3TPlRSFiDxj74z+V+Te674Net+3EQ==
   dependencies:
     ethers "5.6.9"
     typescript "4.4.2"
@@ -992,7 +992,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^28.1.4":
+"@types/jest@28.1.4":
   version "28.1.4"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-28.1.4.tgz#a11ee6c8fd0b52c19c9c18138b78bbcc201dad5a"
   integrity sha512-telv6G5N7zRJiLcI3Rs3o+ipZ28EnE+7EvF0pSrt2pZOMnAVI/f+6/LucDxOvcBcTeTL3JMF744BbVQAVBUQRA==

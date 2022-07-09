@@ -1,8 +1,8 @@
 import { BigNumber, ethers } from "ethers";
-import { concat, arrayify } from "ethers/lib/utils";
+import { concat, arrayify, zeroPad } from "ethers/lib/utils";
 import { OCR_PROTOCOL_ID } from "./constants";
 import { OcrId } from "./OcrId";
-import { encodeBytes } from "@nerfzael/encoding";
+import { encodeFixedBytes } from "@nerfzael/encoding";
 
 export const encodeOcrIdAsContenthash = (
   ocrId: OcrId,
@@ -10,15 +10,15 @@ export const encodeOcrIdAsContenthash = (
 ): Uint8Array => {
   ocrProtocolId = ocrProtocolId ?? OCR_PROTOCOL_ID;
 
-  const bytes = concat([
+  const bytes = encodeFixedBytes([
     new Uint8Array([ocrProtocolId]),
-    encodeBytes(arrayify(BigNumber.from(ocrId.protocolVersion)), 2),
-    encodeBytes(arrayify(BigNumber.from(ocrId.chainId)), 8),
-    encodeBytes(arrayify(ocrId.contractAddress), 20),
-    encodeBytes(arrayify(BigNumber.from(ocrId.packageIndex)), 8),
-    encodeBytes(arrayify(BigNumber.from(ocrId.startBlock)), 8),
-    encodeBytes(arrayify(BigNumber.from(ocrId.endBlock)), 8),
-  ]);
+    arrayify(BigNumber.from(ocrId.protocolVersion)),
+    arrayify(BigNumber.from(ocrId.chainId)),
+    arrayify(ocrId.contractAddress),
+    arrayify(BigNumber.from(ocrId.packageIndex)),
+    arrayify(BigNumber.from(ocrId.startBlock)),
+    arrayify(BigNumber.from(ocrId.endBlock)),
+  ], [1, 2, 8, 20, 8, 8, 8]);
 
   return bytes;
 };
