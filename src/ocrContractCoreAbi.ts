@@ -1,3 +1,3 @@
 export const ocrContractCoreAbi = [
-  "function protocolVersion() external returns (uint256)",
+  "function protocolVersion() external view returns (uint256)",
 ];
