@@ -1,7 +1,7 @@
 export const ocrContractAbiV1 = [
-  "event StartPublish(address indexed author, uint256 indexed packageIndex)",
-  "event EndPublish(address indexed author, uint256 indexed packageIndex)",
-  "event PackagePart(uint256 indexed packageIndex, bytes data)",
+  "event StartPublish(uint256 indexed packageIndex, address indexed author)",
+  "event EndPublish(uint256 indexed packageIndex, uint64 partCount)",
+  "event PackagePart(uint256 indexed packageIndex, uint64 partIndex, bytes data)",
   "function protocolVersion() external view returns (uint256)",
   "function startPublish(bytes memory data, bool end) external returns(uint256)",
   "function publishPart(uint256 packageIndex, bytes memory data, bool end) external",
